@@ -12,7 +12,7 @@ else:
 n_neigbours = st.slider("How many neighbours to consider?", 0, 20, 5)
 
 if st.button("Submit"):
-    embedding, _ = locally_linear_embedding(penguin_file,n_neighbors=n_neigbours, n_components=2)
+    embedding, _ = locally_linear_embedding(penguins_df,n_neighbors=n_neigbours, n_components=2)
     fig = px.scatter(x=embedding[:,0], y=embedding[:,1])
     st.plotly_chart(fig)
 else:
